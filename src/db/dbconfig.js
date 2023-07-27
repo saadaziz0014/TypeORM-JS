@@ -9,7 +9,10 @@ const MyDataSource = new typeorm.DataSource({
   database: "typeorm",
   logging: true,
   synchronize: true,
-  entities: [require("./entities/user.entity")],
+  entities: [
+    require("./entities/user.entity"),
+    require("./entities/profile.entity"),
+  ],
 });
 
 module.exports = MyDataSource;

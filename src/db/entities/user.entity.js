@@ -17,6 +17,16 @@ const User = new typeorm.EntitySchema({
       default: false,
     },
   },
+  relations: {
+    profile: {
+      target: "Profile",
+      type: "one-to-one",
+      cascade: true,
+      joinColumn: { name: "profile_id", referencedColumnName: "id" },
+      onDelete: "CASCADE",
+      eager: true,
+    },
+  },
 });
 
 module.exports = User;
